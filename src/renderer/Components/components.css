@@ -1,0 +1,93 @@
+/* Table styles */
+.table-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Additional styles for the active button */
+.active-button {
+  background: #555;
+}
+
+/* status switch button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch input:checked ~ .slider {
+  background-color: #2196f3;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s; /* Add transition property here */
+}
+
+.switch input:checked ~ .slider:before {
+  transform: translateX(25spx);
+}
+
+/* Added styles for the text */
+.slider span {
+  font-size: 12px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch input:checked ~ .slider span {
+  opacity: 0;
+}
+
+.switch input:not(:checked) ~ .slider span {
+  opacity: 1;
+}
